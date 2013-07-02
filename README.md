@@ -1,4 +1,4 @@
 AllEmacs
 ========
 
-Emacs customization for programming with multiple languages (Xtml, S family, C)
+Emacs customizations for programming with multiple languages (Xtml, S family, C)
