@@ -142,9 +142,9 @@
 
 ;;Window splitter
        (other-window 1)
-        (split-window-vertically)
+        (split-window-horizontally)
         (other-window 1)
         (dired "~/symlinks")
-        (split-window-horizontally)
+        (split-window-vertically)
         (other-window 2)
         (list-buffers)
