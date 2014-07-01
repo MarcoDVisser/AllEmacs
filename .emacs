@@ -41,8 +41,6 @@
 	(add-hook 'text-mode-hook 'display-line-numbers)
 	(add-hook 'ess-mode-hook 'display-line-numbers)
 
-    
-
 (global-set-key (kbd "C-x <up>") 'windmove-up)
 (global-set-key (kbd "C-x <down>") 'windmove-down)
 ; Can't use these as they are set to buffer switching
@@ -137,14 +135,18 @@
 ;;                     Set Windows		  			                ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
 
+;; Numbers always on
+(global-linum-mode t)    
+
+
 ;; Read to do list
 (find-file "/mnt/disk/Work/TODO.txt")
 
 ;;Window splitter
        (other-window 1)
         (split-window-horizontally)
-        (other-window 1)
+        (other-window 2)
         (dired "~/symlinks")
         (split-window-vertically)
-        (other-window 2)
+        (other-window 3)
         (list-buffers)
