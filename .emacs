@@ -140,7 +140,7 @@
 
 
 ;; Read to do list
-(find-file "/mnt/disk/Work/TODO.txt")
+(find-file "/mnt/disk/Work/todo.org")
 
 ;;Window splitter
        (other-window 1)
