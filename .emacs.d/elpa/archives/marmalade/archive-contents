@@ -1,4 +1,47 @@
 (1
+ (jump-dls .
+	   [(0 4)
+	    nil "Jump to definition of symbol using various methods." single])
+ (mv-shell .
+	   [(1 2)
+	    nil "keep buffers in sync with filename throughout 'mv'commands in shell-mode." single])
+ (fancy-battery .
+		[(0 2)
+		 ((emacs
+		   (24 1)))
+		 "Fancy battery display" single])
+ (how-many-lines-in-project .
+			    [(0 2)
+			     ((find-file-in-project
+			       (3 3)))
+			     "Calculate how many lines are there in your project." single])
+ (clojure-env .
+	      [(0 0 3)
+	       nil "manage clojure environments with Emacs" single])
+ (snakehump .
+	    [(0 1 1)
+	     nil "Convert between compound word conventions" tar])
+ (env-var-import .
+		 [(2 1)
+		  nil "Import shell environment variables in GUI Emacs" single])
+ (eldoro .
+	 [(0 1 0)
+	  nil "A pomodoro timer/tracker that works with org-mode." tar])
+ (highlight-sexp .
+		 [(1 0)
+		  nil "highlight current zone according to its context" single])
+ (tdd .
+      [(1 0)
+       nil "recompile on save and indicate success in the mode line" single])
+ (markdown-toc .
+	       [(0 0 6)
+		((markdown-mode
+		  (2 0))
+		 (dash
+		  (2 5 0))
+		 (s
+		  (1 7 0)))
+		"A simple TOC generator for markdown file" single])
  (zone-matrix .
 	      [(0 0 1)
 	       nil "Matrix themed Zone mode" tar])
@@ -87,7 +130,7 @@
 	      [(0 7 1)
 	       nil "Wrap text with punctation or tag" single])
  (world-time-mode .
-		  [(0 0 2)
+		  [(0 0 6)
 		   nil "show whole days of world-time diffs" single])
  (workspaces .
 	     [(0 1)
@@ -185,8 +228,10 @@
 	   [(8 0 4)
 	    nil "major mode for editing html templates" single])
  (web .
-      [(0 4 1)
-       nil "useful HTTP client" single])
+      [(0 4 3)
+       ((dash
+	 (2 3 0)))
+       "useful HTTP client" single])
  (weather-metno .
 		[(20140121)
 		 ((emacs
@@ -198,7 +243,7 @@
 	  [(2012 3 27 2)
 	   nil "Get weather reports via worldweatheronline.com" single])
  (wcheck-mode .
-	      [(2013 6 25)
+	      [(2014 6 21)
 	       nil "General interface for text checkers" tar])
  (wc-mode .
 	  [(1 3)
@@ -964,10 +1009,8 @@
 	     (1 0 0)))
 	   "An Emacs interface for RuboCop" single])
  (rspec-mode .
-	     [(1 7)
-	      ((ruby-mode
-		(1 0)))
-	      "Enhance ruby-mode for RSpec" single])
+	     [(1 10)
+	      nil "Enhance ruby-mode for RSpec" tar])
  (roy-mode .
 	   [(0 1 0)
 	    nil "Roy major mode" single])
@@ -1032,7 +1075,7 @@
 	     (1 2)))
 	   "A library for pasting to https://refheap.com" single])
  (recursive-narrow .
-		   [(1 0)
+		   [(1 2)
 		    nil "narrow-to-region that operates recursively" single])
  (rect-mark .
 	    [(1 4)
@@ -1432,7 +1475,7 @@
 	      (1 6 8)))
 	    "Blog from Org mode to wordpress" tar])
  (org-trello .
-	     [(0 4 4)
+	     [(0 4 8)
 	      ((db
 		(0 0 6))
 	       (s
@@ -1486,7 +1529,7 @@
 	       (6 1)))
 	     "basic support for magit links" single])
  (org-journal .
-	      [(1 4 6)
+	      [(1 5 2)
 	       nil "a simple org-mode based journaling mode" single])
  (org-gnome .
 	    [(0 1)
@@ -1672,8 +1715,8 @@
 	       (1 1)))
 	     "Mote minor mode" single])
  (monokai-theme .
-		[(0 0 11)
-		 nil "REQUIRES EMACS 24: Monokai Color Theme for Emacs." single])
+		[(0 0 12)
+		 nil "DEPRECATED: Monokai Color Theme for Emacs." single])
  (monky .
 	[(0 1)
 	 nil "control Hg from Emacs." single])
@@ -1754,9 +1797,9 @@
 	      [(0 1)
 	       nil "Become an Emacs master" single])
  (marmalade-upload .
-		   [(0 0 2)
+		   [(0 0 4)
 		    ((web
-		      (0 4 1))
+		      (0 4 2))
 		     (kv
 		      (0 0 19)))
 		    "upload client for marmalade from emacs" single])
@@ -1773,7 +1816,7 @@
 		       (0 9 9 6 10)))
 		     "The Marmalade package store service." tar])
  (marmalade-demo .
-		 [(0 0 3)
+		 [(0 0 5)
 		  nil "a demonstration elpa package" single])
  (marmalade .
 	    [(0 0 4)
@@ -1817,7 +1860,7 @@
 	    [(1 2 2)
 	     nil "modeline replacement forked from an early version of powerline.el" single])
  (maildir .
-	  [(0 0 23)
+	  [(0 0 27)
 	   ((kv
 	     (0 0 17))
 	    (dash
@@ -2611,12 +2654,8 @@
 	    [(0 1 0)
 	     nil "Minor mode that assigns a unique number to each frame for easy switching" single])
  (frame-restore .
-		[(0 4)
-		 ((dash
-		   (1 2))
-		  (f
-		   (0 11))
-		  (emacs
+		[(0 5)
+		 ((emacs
 		   (24 1)))
 		 "Restore Emacs frame" single])
  (foo .
@@ -2814,7 +2853,7 @@
 		   (0 6 0)))
 		 "Cask support in Flycheck" single])
  (flycheck .
-	   [(0 18)
+	   [(0 19)
 	    ((s
 	      (1 9 0))
 	     (dash
@@ -2827,7 +2866,7 @@
 	      (0 3))
 	     (emacs
 	      (24 1)))
-	    "On-the-fly syntax checking (Flymake done right)" tar])
+	    "Modern on-the-fly syntax checking for GNU Emacs" tar])
  (flx-ido .
 	  [(0 2)
 	   ((flx
@@ -3109,11 +3148,11 @@
 	  (0 8 0)))
 	"Emacs Python Development Environment" tar])
  (elpakit .
-	  [(1 0 7)
+	  [(1 1 1)
 	   ((anaphora
 	     (0 0 6))
 	    (dash
-	     (1 0 3)))
+	     (2 3 0)))
 	   "package archive builder" single])
  (elpa-mirror .
 	      [(1 1 2)
@@ -3122,9 +3161,9 @@
 	     [(0 4)
 	      nil "Handy functions for inspecting and comparing package archives" single])
  (elnode .
-	 [(0 9 9 7 7)
+	 [(0 9 9 8 5)
 	  ((web
-	    (0 1 4))
+	    (0 4 3))
 	   (dash
 	    (1 1 0))
 	   (noflet
@@ -3458,7 +3497,7 @@
 	      [(0 0 5)
 	       nil "a markup mode for creole" single])
  (creole .
-	 [(1 0 3)
+	 [(1 0 5)
 	  ((noflet
       (0 0 3))
 	   (kv
@@ -3748,7 +3787,7 @@
 	   (1 1)))
 	 "Client for IRC in Emacs" tar])
  (cider .
-	[(0 5 0)
+	[(0 6 0)
 	 ((clojure-mode
 	   (2 0 0))
 	  (cl-lib
@@ -3791,7 +3830,7 @@
 	[(0 1)
 	 nil "implementation of a hash table whose key-value pairs expire" single])
  (c-eldoc .
-	  [(0 5)
+	  [(0 7)
 	   nil "helpful description of the arguments to C functions" single])
  (button-lock .
 	      [(1 0 0)
@@ -4009,7 +4048,7 @@
 		      (1 2 0)))
 		    "Yasnippets for AngularJS" tar])
  (android-mode .
-	       [(0 2 5)
+	       [(0 3 0)
 		nil "Minor mode for Android application development" single])
  (anaphora .
 	   [(1 0 0)

@@ -22,14 +22,21 @@
 (setq x-select-enable-clipboard t) ; clipboard interaction
 (defvar my-auto-save-folder "~/.emacs.d/auto-save/"); folder for auto-saves
 
+;;Package.el repositories
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+
 ;; font size
 (set-face-attribute 'default nil :height 80)
 
 ;my load paths
- (add-to-list 'load-path "~/symlink/emacs/")
+ (add-to-list 'load-path "~/.emacs.d/emacs23/")
  (add-to-list 'load-path "~/.emacs.d/lisp/")
 
 ; Color theme
+;; If emacs23 then make sure to add folder emacs23
+;; with color-theme.el to .emacs.d
 (require 'color-theme)
 (require 'color-theme-tango)
 (eval-after-load "color-theme"
@@ -70,11 +77,6 @@
                             (find-file-noselect 
                              (dired-get-file-for-visit)))
          (select-window dired-window)))))
-
-;;Package.el repositories
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 ;; Enable toggling of uninteresting files.
     (setq dired-omit-mode t)
