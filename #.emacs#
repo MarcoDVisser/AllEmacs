@@ -132,24 +132,26 @@
           (lambda () 
             (local-set-key (kbd "RET") 'newline)))
 
-(setq ess-eval-visibly nil) ; ESS will not print the evaluated commands, also speeds up the evaluation 
-
-;; Copy the current file path
-
-(defun show-file-name ()
-  "Show the full path file name in the minibuffer."
-  (interactive)
-  (message (buffer-file-name))
-  (kill-new (file-truename buffer-file-name))
-)
-(global-set-key [C-f1] 'show-file-name)
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                     Set Windows		  			                ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
 
 ;; STOP BEEPING!!!
 (setq visible-bell 1)
+
+;; spelling
+add-to-list 'ispell-local-dictionary-alist '("english-hunspell"
+                                              "[[:alpha:]]"
+                                              "[^[:alpha:]]"
+                                              "[']"
+                                              t
+                                              ("-d" "en_US")
+                                              nil
+                                              iso-8859-1))
+
+(setq ispell-program-name "hunspell"          ; Use hunspell to correct mistakes
+      ispell-dictionary   "english-hunspell") ; Default dictionary to
+					      ; use
 
 
 ;; Numbers always on
