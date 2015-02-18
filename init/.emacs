@@ -59,13 +59,7 @@
 ; Parenthesis highlighting
 (show-paren-mode t) ;for Emacs
 
-;; CamelCaseProgramming sensitivity
-(subword-mode t)
-
-;; Auto predictive completion?
-(global-pabbrev-mode t)
-
-(Defun dired-window () (window-at (frame-width) 1))
+(defun dired-window () (window-at (frame-width) 1))
 
 (eval-after-load 'dired
   '(define-key dired-mode-map (kbd "o")
@@ -83,7 +77,13 @@
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 ;; Enable toggling of uninteresting files.
-    (setq dired-omit-mode t)
+(setq dired-omit-mode t)
+
+;; CamelCaseProgramming sensitivity
+(subword-mode t)
+
+;; Auto predictive completion?
+(setq global-pabbrev-mode t)
 
 
 
