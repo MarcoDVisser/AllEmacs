@@ -82,11 +82,6 @@
 ;; CamelCaseProgramming sensitivity
 (subword-mode t)
 
-;; Auto predictive completion?
-(setq global-pabbrev-mode t)
-
-
-
 ;; Copy the current file path
 (defun show-file-name ()
   "Show the full path file name in the minibuffer."
@@ -180,3 +175,6 @@
         (split-window-vertically)
         (other-window 3)
         (list-buffers)
+
+;; Auto predictive completion? (must start after autoyas)
+(setq global-pabbrev-mode t)
