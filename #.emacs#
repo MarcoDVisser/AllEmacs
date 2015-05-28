@@ -14,7 +14,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                      Basic Customization                         ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;;;;;
 ;; Start up screen
 (setq inhibit-startup-message t)
 (set-language-environment "Latin-1") ; Support for most western languages
@@ -77,9 +77,30 @@
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 ;; Enable toggling of uninteresting files.
-    (setq dired-omit-mode t)
+(setq dired-omit-mode t)
 
-    
+;; CamelCaseProgramming sensitivity
+(subword-mode t)
+
+;; Copy the current file path
+(defun show-file-name ()
+  "Show the full path file name in the minibuffer."
+  (interactive)
+  (message (buffer-file-name))
+  (kill-new (file-truename buffer-file-name))
+)
+(global-set-key [C-f1] 'show-file-name)
+
+;; increment numbers function
+(defun increment-number-at-point ()
+      (interactive)
+      (skip-chars-backward "0123456789")
+      (or (looking-at "[0123456789]+")
+          (error "No number at point"))
+      (replace-match (number-to-string (1+ (string-to-number (match-string 0))))))
+
+    (global-set-key (kbd "C-c +") 'increment-number-at-point)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                      Emacs Speaks Statistics                     ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -132,26 +153,15 @@
           (lambda () 
             (local-set-key (kbd "RET") 'newline)))
 
+(setq ess-eval-visibly nil) ; ESS will not print the evaluated commands, also speeds up the evaluation 
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                     Set Windows		  			                ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
 
 ;; STOP BEEPING!!!
 (setq visible-bell 1)
-
-;; spelling
-add-to-list 'ispell-local-dictionary-alist '("english-hunspell"
-                                              "[[:alpha:]]"
-                                              "[^[:alpha:]]"
-                                              "[']"
-                                              t
-                                              ("-d" "en_US")
-                                              nil
-                                              iso-8859-1))
-
-(setq ispell-program-name "hunspell"          ; Use hunspell to correct mistakes
-      ispell-dictionary   "english-hunspell") ; Default dictionary to
-					      ; use
 
 
 ;; Numbers always on
@@ -167,3 +177,6 @@ add-to-list 'ispell-local-dictionary-alist '("english-hunspell"
         (split-window-vertically)
         (other-window 3)
         (list-buffers)
+
+;; Auto predictive completion? (must start after autoyas)
+(setq global-pabbrev-mode t)
