@@ -116,7 +116,9 @@
                    ((equal prefix '(16)) "%A, %d. %B %Y")))
           (system-time-locale "de_DE"))
       (insert (format-time-string format))))
-  (global-set-key (kbd "C-c d") 'insert-date)
+(global-set-key (kbd "C-c d") 'insert-date)
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                      Emacs Speaks Statistics                     ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
